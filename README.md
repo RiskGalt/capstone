@@ -64,3 +64,25 @@
 * [cite_start]**Cloud Architecture:** Utilizing a secure, multi-tenant SaaS infrastructure hosted out of enterprise data centers located strictly in Canada Central (Toronto) to adhere to Canadian data residency principles and ensure low-latency inventory syncing[cite: 120].
 * [cite_start]**On-Premises / Local Infrastructure Option:** A containerized deployment model allowing multi-partner distribution facilities or enterprise warehouses to install the application database directly on hardware located physically at the client's location[cite: 121]. [cite_start]This enables physical data sovereignty and continuous offline inventory management, while maintaining a secure external cloud bridge to receive automated rule updates and pricing changes[cite: 122].
 * [cite_start]**Local Sandbox Xcode Compilation (Capstone Development Track):** Designed explicitly to support local sandbox execution and rapid feature validation without production cloud dependency[cite: 123]. [cite_start]The application compiles natively via Xcode to target the macOS iOS Simulator (ideal for shared-screen technical demonstrations and rapid UI evaluations) or side-loads directly onto a physical iOS hardware device via a local wired or wireless connection[cite: 124]. [cite_start]This option maintains full local programmatic logic, core structural calculations, and offline-first database compliance tracking powered by SwiftData, with remote codebase synchronization managed through a clean Git/GitHub source tree[cite: 125].
+# B2B Logistics & Distribution Console
+
+A production-ready iOS application built with SwiftUI and the Observation framework designed to optimize wholesale beverage distribution channels and manage fleet vehicle capacity constraints.
+
+## Core Engineered Features
+
+### 1. Dynamic B2B SKU Matrix
+*   Implements structural mapping for multi-tier premium juice product lines (960ml, 473ml, Sparkling, and 1L Tetra Pak configurations).
+*   Enforces strict corporate procurement rules, including programmatic **Minimum Order Quantity (MOQ)** verification guards per category.
+
+### 2. Commercial Pricing & Tax Engine
+*   Tracks registered distributors and automatically evaluates contractual volume discount multipliers.
+*   Features a localized billing microservice calculating regional compliance taxes, specifically handling the **13% Ontario Harmonized Sales Tax (HST)**.
+
+### 3. Volumetric Fleet Capacity Guards
+*   Monitors delivery routing constraints against active transport vehicles.
+*   Includes automated load-capacity validation that flags cargo payloads with an `OVER CAPACITY` warning badge if weight thresholds are breached.
+
+## Technical Architecture
+*   **UI Framework:** SwiftUI (Tabbed Control Navigation)
+*   **State Management:** Swift `@Observable` Macro Architecture
+*   **Persistence Strategy:** Localized In-Memory Data Store & Structural Seeding Service
